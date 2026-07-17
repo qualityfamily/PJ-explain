@@ -213,29 +213,21 @@
     border-radius: 22px;
     padding: 26px 22px;
     box-shadow: 0 12px 34px rgba(0,0,0,0.35);
+    background-color: #0c0a08;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     opacity: 0;
     transform: translateY(36px);
     transition: opacity 0.9s cubic-bezier(0.2,0.7,0.3,1), transform 0.9s cubic-bezier(0.2,0.7,0.3,1);
   }
 
-  .step::before{
-    content: "";
-    position: absolute;
-    inset: -20px;
-    background-image: var(--bg-img);
-    background-size: cover;
-    background-position: center;
-    filter: blur(16px) brightness(0.6) saturate(1.15);
-    transform: scale(1.12);
-    z-index: 0;
-  }
-
   .step::after{
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(8,6,3,0.40) 0%, rgba(8,6,3,0.70) 100%);
+    background: linear-gradient(180deg, rgba(8,6,3,0.15) 0%, rgba(8,6,3,0.45) 100%);
     z-index: 0;
   }
 
@@ -408,29 +400,22 @@
     border: 1.5px solid rgba(233,209,154,0.55);
     border-radius: 22px;
     box-shadow: 0 12px 34px rgba(0,0,0,0.35);
+    background-color: #0c0a08;
+    background-image: url('stories-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     opacity: 0;
     transform: translateY(36px);
     transition: opacity 0.9s cubic-bezier(0.2,0.7,0.3,1), transform 0.9s cubic-bezier(0.2,0.7,0.3,1);
   }
 
-  .journey-close::before{
-    content: "";
-    position: absolute;
-    inset: -20px;
-    background-image: url('stories.png');
-    background-size: cover;
-    background-position: center;
-    filter: blur(16px) brightness(0.6) saturate(1.15);
-    transform: scale(1.12);
-    z-index: 0;
-  }
-
   .journey-close::after{
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(8,6,3,0.40) 0%, rgba(8,6,3,0.70) 100%);
+    background: linear-gradient(180deg, rgba(8,6,3,0.15) 0%, rgba(8,6,3,0.45) 100%);
     z-index: 0;
   }
 
@@ -519,7 +504,7 @@
 
     <div class="journey-steps">
 
-      <div class="step" style="--bg-img:url('step01.png')">
+      <div class="step" style="background-image:url('step01-bg.png')">
         <div class="step-top">
           <div class="step-num">01</div>
           <h3>シンバを決める</h3>
@@ -557,7 +542,7 @@
         </div>
       </div>
 
-      <div class="step" style="--bg-img:url('step02.png')">
+      <div class="step" style="background-image:url('step02-bg.png')">
         <div class="step-top">
           <div class="step-num">02</div>
           <h3>伴走者と出会う</h3>
@@ -573,7 +558,7 @@
         </div>
       </div>
 
-      <div class="step" style="--bg-img:url('step03.png')">
+      <div class="step" style="background-image:url('step03-bg.png')">
         <div class="step-top">
           <div class="step-num">03</div>
           <h3>全6回のプチシェア会</h3>
@@ -598,7 +583,7 @@
         </div>
       </div>
 
-      <div class="step" style="--bg-img:url('step04.png')">
+      <div class="step" style="background-image:url('step04-bg.png')">
         <div class="step-top">
           <div class="step-num">04</div>
           <h3>心が少しずつ変わっていく</h3>
@@ -626,7 +611,7 @@
         </div>
       </div>
 
-      <div class="step" style="--bg-img:url('step05.png')">
+      <div class="step" style="background-image:url('step05-bg.png')">
         <div class="step-top">
           <div class="step-num">05</div>
           <h3>全体シェア会</h3>
@@ -651,7 +636,7 @@
         </div>
       </div>
 
-      <div class="step" style="--bg-img:url('step06.png')">
+      <div class="step" style="background-image:url('step06-bg.png')">
         <div class="step-top">
           <div class="step-num">06</div>
           <h3>Quality Familyへ</h3>
