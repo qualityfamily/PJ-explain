@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>シンバPJとは？</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold: #c9a24b;
+    --gold-soft: #e9d19a;
+    --cream: #f3ede0;
+    --cream-soft: rgba(243,237,224,0.86);
+    --line: rgba(233,209,154,0.35);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body{
+    position: relative;
+    color: var(--cream);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+    background: #0c0c10;
+    overflow-x: hidden;
+  }
+
+  body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('simba-bg.png');
+    background-size: cover;
+    background-position: center 15%;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+
+  body::after{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,18,0.40) 0%, rgba(20,12,4,0.12) 40%, rgba(10,6,2,0.60) 100%);
+    z-index: 0;
+  }
+
+  main{
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 24px 90px;
+  }
+
+  h1{
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 800;
+    font-size: clamp(26px, 6.5vw, 34px);
+    color: var(--gold-soft);
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin: 0 0 32px;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.75);
+  }
+
+  .panel{
+    background: rgba(24,14,6,0.46);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(233,209,154,0.18);
+    border-radius: 16px;
+    padding: 36px 28px;
+  }
+
+  .lede{
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 500;
+    font-size: clamp(16.5px, 4.4vw, 20px);
+    text-align: center;
+    color: var(--cream);
+    line-height: 1.95;
+    margin: 0 0 36px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+    text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+  }
+
+  .body-text p{
+    font-size: 15.5px;
+    color: var(--cream-soft);
+    margin: 0 0 28px;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.65);
+  }
+
+  .body-text p:last-child{ margin-bottom: 0; }
+
+  .kagi{ color: var(--gold-soft); }
+
+  .chain{
+    margin: 36px 0;
+    padding: 26px 22px;
+    background: rgba(201,162,75,0.10);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+  }
+
+  .chain p{
+    margin: 0 0 10px;
+    font-size: 15.5px;
+    color: var(--cream);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+
+  .chain p:last-child{ margin-bottom: 0; }
+
+  .chain .headline{
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--gold-soft);
+    margin-bottom: 14px;
+  }
+
+  .invite{
+    text-align: center;
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(16px, 4.2vw, 18px);
+    color: var(--gold-soft);
+    margin-top: 40px;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.6);
+  }
+
+  footer.page-foot{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--cream-soft);
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    padding-bottom: 48px;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.65);
+  }
+
+  @media (max-width: 480px){
+    main{ padding: 56px 20px 72px; }
+    .panel{ padding: 26px 20px; }
+    .chain{ padding: 22px 18px; }
+  }
+</style>
+</head>
+<body>
+
+  <main>
+    <h1>シンバPJとは？</h1>
+
+    <div class="panel">
+      <p class="lede">止まっていた心が動き出す。<br>生きている実感が戻り、大切な人とのつながりが深まっていくプロジェクト。</p>
+
+      <div class="body-text">
+        <p>シンバPJは、忙しい毎日の中で見失いがちな<span class="kagi">「本当の心の声」</span>と向き合い、大切な人との絆を育んでいくプロジェクトです。ストーリーに触れ、自らも実践を重ねることで心情的な基台を育み、愛が感じられる Quality Family を目指します。</p>
+
+        <p>シンバPJは、1000のストーリーを、みんなで紡いでいくプロジェクトです。</p>
+      </div>
+
+      <div class="chain">
+        <p class="headline">一人の実践が、一つのストーリーになる。</p>
+        <p>一つのストーリーが、誰かの心を動かす。</p>
+        <p>その誰かの実践が、また新しいストーリーを生み出していく。</p>
+        <p>1000の実話で、未来を変える。</p>
+      </div>
+
+      <div class="body-text">
+        <p>一つ一つの物語が積み重なるとき、自分の心も、家族も、社会も、もっと愛を感じられる場所へと変わっていく。</p>
+      </div>
+
+      <p class="invite">そんな未来を、一緒につくっていきませんか。</p>
+    </div>
+  </main>
+
+  <footer class="page-foot">一般社団法人クオリティファミリー推進委員会</footer>
+
+</body>
+</html>
