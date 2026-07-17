@@ -208,17 +208,40 @@
 
   .step{
     position: relative;
+    overflow: hidden;
     border: 1.5px solid rgba(233,209,154,0.55);
     border-radius: 22px;
     padding: 26px 22px;
-    background: rgba(10,8,4,0.52);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
     box-shadow: 0 12px 34px rgba(0,0,0,0.35);
 
     opacity: 0;
     transform: translateY(36px);
     transition: opacity 0.9s cubic-bezier(0.2,0.7,0.3,1), transform 0.9s cubic-bezier(0.2,0.7,0.3,1);
+  }
+
+  .step::before{
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background-image: var(--bg-img);
+    background-size: cover;
+    background-position: center;
+    filter: blur(16px) brightness(0.6) saturate(1.15);
+    transform: scale(1.12);
+    z-index: 0;
+  }
+
+  .step::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8,6,3,0.40) 0%, rgba(8,6,3,0.70) 100%);
+    z-index: 0;
+  }
+
+  .step-top, .step-body{
+    position: relative;
+    z-index: 1;
   }
 
   .step.in-view{
@@ -378,19 +401,42 @@
 
   .journey-close{
     position: relative;
+    overflow: hidden;
     text-align: center;
     margin-top: 8px;
     padding: 34px 22px;
     border: 1.5px solid rgba(233,209,154,0.55);
     border-radius: 22px;
-    background: rgba(10,8,4,0.52);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
     box-shadow: 0 12px 34px rgba(0,0,0,0.35);
 
     opacity: 0;
     transform: translateY(36px);
     transition: opacity 0.9s cubic-bezier(0.2,0.7,0.3,1), transform 0.9s cubic-bezier(0.2,0.7,0.3,1);
+  }
+
+  .journey-close::before{
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background-image: url('stories.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(16px) brightness(0.6) saturate(1.15);
+    transform: scale(1.12);
+    z-index: 0;
+  }
+
+  .journey-close::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8,6,3,0.40) 0%, rgba(8,6,3,0.70) 100%);
+    z-index: 0;
+  }
+
+  .journey-close > *{
+    position: relative;
+    z-index: 1;
   }
 
   .journey-close.in-view{
@@ -473,7 +519,7 @@
 
     <div class="journey-steps">
 
-      <div class="step">
+      <div class="step" style="--bg-img:url('step01.png')">
         <div class="step-top">
           <div class="step-num">01</div>
           <h3>シンバを決める</h3>
@@ -511,7 +557,7 @@
         </div>
       </div>
 
-      <div class="step">
+      <div class="step" style="--bg-img:url('step02.png')">
         <div class="step-top">
           <div class="step-num">02</div>
           <h3>伴走者と出会う</h3>
@@ -527,7 +573,7 @@
         </div>
       </div>
 
-      <div class="step">
+      <div class="step" style="--bg-img:url('step03.png')">
         <div class="step-top">
           <div class="step-num">03</div>
           <h3>全6回のプチシェア会</h3>
@@ -552,7 +598,7 @@
         </div>
       </div>
 
-      <div class="step">
+      <div class="step" style="--bg-img:url('step04.png')">
         <div class="step-top">
           <div class="step-num">04</div>
           <h3>心が少しずつ変わっていく</h3>
@@ -580,7 +626,7 @@
         </div>
       </div>
 
-      <div class="step">
+      <div class="step" style="--bg-img:url('step05.png')">
         <div class="step-top">
           <div class="step-num">05</div>
           <h3>全体シェア会</h3>
@@ -605,7 +651,7 @@
         </div>
       </div>
 
-      <div class="step">
+      <div class="step" style="--bg-img:url('step06.png')">
         <div class="step-top">
           <div class="step-num">06</div>
           <h3>Quality Familyへ</h3>
@@ -648,21 +694,36 @@
   <footer class="page-foot">一般社団法人クオリティファミリー推進委員会</footer>
 
   <script>
-    const revealTargets = document.querySelectorAll('.step, .journey-close');
+    function initReveal(){
+      const revealTargets = document.querySelectorAll('.step, .journey-close');
 
-    if ('IntersectionObserver' in window){
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting){
-            entry.target.classList.add('in-view');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+      if ('IntersectionObserver' in window){
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting){
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
 
-      revealTargets.forEach(el => observer.observe(el));
+        revealTargets.forEach(el => observer.observe(el));
+      } else {
+        revealTargets.forEach(el => el.classList.add('in-view'));
+      }
+
+      // Safety net: if something prevents the observer from ever firing
+      // (older browser quirks, etc.), reveal everything after a short delay
+      // so content is never permanently stuck invisible.
+      setTimeout(() => {
+        revealTargets.forEach(el => el.classList.add('in-view'));
+      }, 4000);
+    }
+
+    if (document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', initReveal);
     } else {
-      revealTargets.forEach(el => el.classList.add('in-view'));
+      initReveal();
     }
   </script>
 
