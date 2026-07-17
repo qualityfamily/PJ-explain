@@ -81,6 +81,10 @@
     padding: 36px 28px;
   }
 
+  .lede, .body-text p, .chain p, .chain .headline{
+    text-wrap: pretty;
+  }
+
   .lede{
     font-family: 'Shippori Mincho', serif;
     font-weight: 500;
@@ -151,9 +155,13 @@
   }
 
   @media (max-width: 480px){
-    main{ padding: 56px 20px 72px; }
-    .panel{ padding: 26px 20px; }
-    .chain{ padding: 22px 18px; }
+    main{ padding: 56px 16px 72px; }
+    .panel{ padding: 24px 16px; }
+    .chain{ padding: 20px 14px; }
+    .chain .headline{ font-size: 16px; letter-spacing: -0.01em; }
+    .chain p{ font-size: 14.5px; letter-spacing: -0.01em; }
+    .body-text p{ font-size: 14.5px; letter-spacing: -0.01em; }
+    .lede{ letter-spacing: -0.01em; }
   }
 </style>
 </head>
