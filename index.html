@@ -256,6 +256,42 @@
     .journey-head{ margin-bottom: 32px; }
   }
 
+  .cta{
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 20px;
+    text-align: center;
+  }
+
+  .cta p{
+    font-size: 14.5px;
+    color: var(--cream-soft);
+    margin: 0 0 20px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+
+  .cta a{
+    display: inline-block;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #1a1408;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    padding: 15px 34px;
+    border-radius: 999px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    box-shadow: 0 10px 26px rgba(201,162,75,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .cta a:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(201,162,75,0.45);
+  }
+
 </style>
 </head>
 <body>
@@ -297,6 +333,11 @@
       <div class="step"><img src="journey-full.png" alt="シンバPJの旅の流れ:シンバを決める、伴走者と出会う、全6回のプチシェア会、心が少しずつ変わっていく、全体シェア会、Quality Familyへ、1000 Stories" loading="lazy"></div>
     </div>
   </section>
+
+  <div class="cta">
+    <p>シンバストーリーを体験したい方はこちら</p>
+    <a href="https://qualityfamily.github.io/-PJ-/">シンバPJストーリーを見る</a>
+  </div>
 
   <footer class="page-foot">一般社団法人クオリティファミリー推進委員会</footer>
 
